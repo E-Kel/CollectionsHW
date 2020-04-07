@@ -16,7 +16,7 @@ public class CollectionOperations {
         return hashSet;
     }
     public static int countConreteWordInAString(String fromPhrase, String wordToCount) {
-        log.trace("A method that count amount of the concrete word in the string has been called");
+        log.trace("Method that count amount of the concrete word in the string has been called");
         HashMap hashMap = new HashMap();
         wordToCount = wordToCount.toLowerCase().replaceAll("[,.?! ]", "");
         String[] parseToArray = fromPhrase.toLowerCase().split("[,.?! ]");
