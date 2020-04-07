@@ -13,9 +13,9 @@ public class Util {
 
     }
 
-    public static HashMap strToHashMap(String string) {
+    public static HashMap<String, Object> strToHashMap(String string) {
         LOGGER.info("Method for getting HashMap of the String is called");
-        HashMap hashMap = new HashMap();
+        HashMap<String, Object> hashMap = new HashMap<>();
         String[] prasedToArray = parseToArray(string);
         for (String str :
                 prasedToArray) {
@@ -28,17 +28,17 @@ public class Util {
         return hashMap;
     }
 
-    public static ArrayList<String> strToArrayList(String string){
+    public static ArrayList<String> strToArrayList(String string) {
         LOGGER.info("Method for getting ArrayList of the String is called");
         ArrayList<String> arrayList = new ArrayList<>();
         String[] prasedToArray = parseToArray(string);
         arrayList.addAll(Arrays.asList(prasedToArray));
-        return  arrayList;
+        return arrayList;
     }
-    public static HashSet strToHashSet(String str) { //task3
-        LOGGER.info("Method for getting HshSet of the String is called");
 
-        HashSet hashSet = new HashSet();
+    public static HashSet<String> strToHashSet(String str) { //task3
+        LOGGER.info("Method for getting HshSet of the String is called");
+        HashSet<String> hashSet = new HashSet<>();
         String[] arrstr = str.toLowerCase().split("[,.?! ]");
         for (String string : arrstr) {
             hashSet.add(string);
