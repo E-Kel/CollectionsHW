@@ -2,6 +2,7 @@ import org.apache.log4j.Logger;
 
 import java.util.*;
 
+
 public class Tasks {
     static final Logger log = Logger.getLogger(Tasks.class.getName());
 
@@ -42,9 +43,20 @@ public class Tasks {
 
 
 
-    public static HashSet task4(HashMap hashMap){
+    public static HashSet task3(HashMap hashMap){
         return new HashSet(hashMap.values());
     }
-    public static void task5(){}
-    public static void task6(){}
+
+    public static void task4(ArrayList<String> arrayList){
+        for (String str :
+                arrayList) {
+            log.trace(str);
+        }
+    }
+
+    public static ArrayList<String> task5(ArrayList arrayList){//    //reverse ArrayList
+                  Collections.reverse(arrayList);
+                    return arrayList;
+    }
+
 }
