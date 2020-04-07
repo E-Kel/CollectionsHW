@@ -5,19 +5,16 @@ import java.util.*;
 public class CollectionOperations {
     static final Logger log = Logger.getLogger(CollectionOperations.class.getName());
 
-    public static HashSet strToHashSet(String str) { //task3
+    public static HashSet<String> strToHashSet(String str) { //task3
         log.info("Method that iterating trough HashSet is called");
-
-        HashSet hashSet = new HashSet();
         String[] arrstr = str.toLowerCase().split("[,.?! ]");
-        for (String string : arrstr) {
-            hashSet.add(string);
-        }
+        HashSet<String> hashSet = new HashSet<>();
+        hashSet.addAll(Arrays.asList(arrstr));
         return hashSet;
     }
     public static int countConreteWordInAString(String fromPhrase, String wordToCount) {
         log.trace("Method that count amount of the concrete word in the string has been called");
-        HashMap hashMap = new HashMap();
+        HashMap<Integer, String> hashMap = new HashMap<>();
         wordToCount = wordToCount.toLowerCase().replaceAll("[,.?! ]", "");
         String[] parseToArray = fromPhrase.toLowerCase().split("[,.?! ]");
         int counter = 0;
@@ -34,18 +31,18 @@ public class CollectionOperations {
         }
         return counter;
     }
-    public static void iteratesThroughAllElemInAHashList(HashSet hashSet) {
+    public static void iteratesThroughAllElemInAHashList(HashSet<String> hashSet) {
         log.info("Method that iterating trough HashSet is called");
 
-        Iterator hashSetIter = hashSet.iterator();
+        Iterator<String> hashSetIter = hashSet.iterator();
         for (int i = 0; i < hashSet.size(); i++)
-            log.trace(String.format("Next element is %h", hashSetIter.next().toString()));
+            log.trace(String.format("Next element is %h", hashSetIter.next()));
 
     }
-    public static HashSet getHashSetFromHashMap(HashMap hashMap) {
+    public static HashSet<String> getHashSetFromHashMap(HashMap hashMap) {
         log.info("Method that converts HashMap to HashSet is called");
 
-        return new HashSet(hashMap.values());
+        return new HashSet<String>(hashMap.values());
     }
     public static void printAllElementsOfArrayList(ArrayList<String> arrayList) {
         log.info("Method that prints all the elements of the ArrayList is called");
@@ -54,7 +51,7 @@ public class CollectionOperations {
             log.trace(str);
         }
     }
-    public static ArrayList<String> reverseArrayList(ArrayList arrayList) {//    //reverse ArrayList
+    public static ArrayList<String> reverseArrayList(ArrayList<String> arrayList) {//    //reverse ArrayList
         log.info("Method that reversing ArrayList is called");
         Collections.reverse(arrayList);
         return arrayList;

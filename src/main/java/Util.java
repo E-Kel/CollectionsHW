@@ -9,8 +9,8 @@ public class Util {
 
     private static String[] parseToArray(String string) {
         LOGGER.info("Method for getting array of the String is called");
-
         return string.toLowerCase().split("[,.?! ]");
+
     }
 
     public static HashMap strToHashMap(String string) {
@@ -30,14 +30,13 @@ public class Util {
 
     public static ArrayList<String> strToArrayList(String string){
         LOGGER.info("Method for getting ArrayList of the String is called");
-
         ArrayList<String> arrayList = new ArrayList<>();
         String[] prasedToArray = parseToArray(string);
         arrayList.addAll(Arrays.asList(prasedToArray));
         return  arrayList;
     }
-    public static HashSet strToHashSet(String str) {
-        LOGGER.info("Method for getting HashSet of the String is called");
+    public static HashSet strToHashSet(String str) { //task3
+        LOGGER.info("Method for getting HshSet of the String is called");
 
         HashSet hashSet = new HashSet();
         String[] arrstr = str.toLowerCase().split("[,.?! ]");
@@ -47,5 +46,6 @@ public class Util {
         return hashSet;
     }
 }
+
 
 
