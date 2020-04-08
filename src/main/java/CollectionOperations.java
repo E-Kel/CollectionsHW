@@ -27,9 +27,9 @@ public class CollectionOperations {
 
     public static void iteratesThroughAllElemInAHashList(HashSet<String> hashSet) {
         LOGGER.info("Method that iterating trough HashSet is called");
-
-        for (String s : hashSet) {
-            LOGGER.trace(String.format("Next element is %h", s));
+        Iterator<String> hashSetIter = hashSet.iterator();
+        while (hashSetIter.hasNext()) {
+            LOGGER.trace(String.format("Next element is %h", hashSetIter.next()));
         }
     }
 
@@ -40,6 +40,7 @@ public class CollectionOperations {
 
     public static void printAllElementsOfArrayList(ArrayList<String> arrayList) {
         LOGGER.info("Method that prints all the elements of the ArrayList is called");
+
 
         for (String str : arrayList) {
             LOGGER.trace(str);
