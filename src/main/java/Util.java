@@ -5,7 +5,7 @@ import java.util.HashSet;
 import java.util.logging.Logger;
 
 public class Util {
-    public static Logger LOGGER = Logger.getLogger(Util.class.getName());
+    private static Logger LOGGER = Logger.getLogger(Util.class.getName());
 
     private static String[] parseToArray(String string) {
         LOGGER.info("Method for getting array of the String is called");
@@ -19,31 +19,22 @@ public class Util {
         String[] prasedToArray = parseToArray(string);
         for (String str :
                 prasedToArray) {
-            if (str.equals("")) {
-                continue;
-            } else {
-                hashMap.put(str, null);
-            }
+            if (str.isEmpty()) continue;
+            else hashMap.put(str, null);
         }
         return hashMap;
     }
 
     public static ArrayList<String> strToArrayList(String string) {
         LOGGER.info("Method for getting ArrayList of the String is called");
-        ArrayList<String> arrayList = new ArrayList<>();
         String[] prasedToArray = parseToArray(string);
-        arrayList.addAll(Arrays.asList(prasedToArray));
-        return arrayList;
+        return new ArrayList<>(Arrays.asList(prasedToArray));
     }
 
     public static HashSet<String> strToHashSet(String str) { //task3
         LOGGER.info("Method for getting HshSet of the String is called");
-        HashSet<String> hashSet = new HashSet<>();
         String[] arrstr = str.toLowerCase().split("[,.?! ]");
-        for (String string : arrstr) {
-            hashSet.add(string);
-        }
-        return hashSet;
+        return new HashSet<>(Arrays.asList(arrstr));
     }
 }
 

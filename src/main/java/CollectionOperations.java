@@ -28,9 +28,9 @@ public class CollectionOperations {
     public static void iteratesThroughAllElemInAHashList(HashSet<String> hashSet) {
         LOGGER.info("Method that iterating trough HashSet is called");
 
-        Iterator<String> hashSetIter = hashSet.iterator();
-        for (int i = 0; i < hashSet.size(); i++)
-            LOGGER.trace(String.format("Next element is %h", hashSetIter.next()));
+        for (String s : hashSet) {
+            LOGGER.trace(String.format("Next element is %h", s));
+        }
     }
 
     public static HashSet<String> getHashSetFromHashMap(HashMap hashMap) {
